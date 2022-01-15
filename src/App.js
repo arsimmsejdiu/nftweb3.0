@@ -3,9 +3,11 @@ import axios from "axios";
 import Header from "./components/Header";
 import "./App.css";
 import PunkList from "./components/PunkList";
+import Main from "./components/Main";
 
 function App() {
   const [punkListData, setPunkListData] = useState([]);
+  const [selectedPunk, setSelectedPunk] = useState(0);
 
   useEffect(() => {
     const getMyNfts = async () => {
@@ -18,12 +20,13 @@ function App() {
     return getMyNfts();
   }, []);
 
-  //console.log(punkListData);
+  console.log(punkListData);
 
   return (
     <div className="app">
       <Header />
-      <PunkList punkListData={punkListData} />
+      <Main punkListData={punkListData} selectedPunk={selectedPunk}/>
+      <PunkList punkListData={punkListData} setSelectedPunk={setSelectedPunk} />
     </div>
   );
 }
