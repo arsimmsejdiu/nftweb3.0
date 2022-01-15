@@ -76,4 +76,9 @@
     padding: 15px 40px;
     color: black;
     border-radius: 50px;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background: linear-gradient(to right, #66feea, #59f9b7);
 }
