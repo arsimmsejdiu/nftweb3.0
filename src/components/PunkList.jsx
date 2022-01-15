@@ -1,13 +1,13 @@
 import CollectionCard from "./CollectionCard";
-//import king from "../assets/king.png";
+import "./PunkList.css";
 
 function PunkList({ punkListData }) {
   console.log(punkListData);
   return (
     <div className="punkList">
       {punkListData.map((punk) => (
-        <div>
-          <CollectionCard key={punk.id} {...punk} />
+        <div key={punk.token_id} className="punkListData">
+          <CollectionCard {...punk} />
         </div>
       ))}
     </div>
