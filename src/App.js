@@ -25,8 +25,15 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Main punkListData={punkListData} selectedPunk={selectedPunk}/>
-      <PunkList punkListData={punkListData} setSelectedPunk={setSelectedPunk} />
+      {punkListData.length > 0 && (
+        <div>
+          <Main punkListData={punkListData} selectedPunk={selectedPunk} />
+          <PunkList
+            punkListData={punkListData}
+            setSelectedPunk={setSelectedPunk}
+          />
+        </div>
+      )}
     </div>
   );
 }
